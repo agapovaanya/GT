@@ -877,7 +877,7 @@ for (i in (1:nrow(itog_table22))){
   }}}
 
 
-write.table(itog_table22, file="итог_июнь_2022.csv ", sep = ";",dec=",",col.names = NA)  
+write.table(itog_table22[,c(1,15:26)], file="итог_июнь_2022.csv ", sep = ";",dec=",",col.names = NA)  
 write.table(itog_table, file="Предыдущий прогноз_июнь_2022.csv ", sep = ";",dec=",",col.names = NA)
 
 
