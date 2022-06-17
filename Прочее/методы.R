@@ -1,3 +1,4 @@
+library(dplyr)
 
 sale_fact<-read.delim("продажи_факт.csv",header=T,sep=";",dec=",",encoding = "UTF-8",stringsAsFactors=F)
 
@@ -5,6 +6,8 @@ prev_forecast<-read.delim("Предыдущий прогноз_июнь.csv",hea
 
 methods_df<-read.delim("лучшие методы_июнь.csv",header=T,sep=";",dec=",",encoding = "UTF-8",stringsAsFactors=F)
 
+#создаем новый столбец с 0 значениями для дальнейшего заполнения
+prev_forecast[,7]=0
 
 #подтягиваем фактические продажи к предыдущему прогнозу
 for (i in (1:nrow(prev_forecast))){
